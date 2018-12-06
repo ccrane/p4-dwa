@@ -39,7 +39,8 @@ __Delete__
   + Observe confirmation message
 
 ## Outside resources
-*Your list of outside resources go here*
++ [Bootstrap 4.1.3](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
++ [jQuery 3.1.1 (*required for Bootstrap*)](https://jquery.com/download/)
 
 ## Code style divergences
 *List any divergences from PSR-1/PSR-2 and course guidelines on code style*
