@@ -23,7 +23,7 @@
 <header>
     {{-- Global header content, ie nav bar --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Uncorked! - Admin</a>
+        <a class="navbar-brand" href="#">Uncorked! Welcome John</a>
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -37,23 +37,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/admin">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/user">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/users">Users</a>
+                    <a class="nav-link" href="/user/reviews">Reviews</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/counties">Countries</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/wines">Wines</a>
+                    <a class="nav-link" href="/user/favorites">Favorites</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <select class="form-control mr-sm-2">
-                    <option value='user'>User</option>
-                    <option value='wine' selected>Wine</option>
-                </select>
                 <input class="form-control mr-sm-2" type="search" placeholder="Search any wine!" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
