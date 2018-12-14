@@ -8,6 +8,7 @@
                 <div class="card text-center">
                     <h5 class="card-header">Countries &amp; Regions</h5>
                     <div class="card-body">
+                        @include('modules.pagesize', ['perPageSize' => $perPageSize])
                         <table class="table table-striped">
                             <thead>
                             <tr>
@@ -19,7 +20,7 @@
                             <tbody>
                             @foreach($countries as $country)
                                 <tr>
-                                    <th scope="row">{{ $country->id }}</th>
+                                    <td scope="row"><strong>{{ $country->id }}</strong></td>
                                     <td>{{ $country->name }}</td>
                                     <td>{{ $country->iso_code }}</td>
                                 </tr>
@@ -27,16 +28,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="card-footer">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                            </ul>
-                        </nav>
+                    <div class="card-footer d-flex align-items-center justify-content-center">
+                        {{ $countries->appends(['perPageSize' => $perPageSize])->render() }}
                     </div>
                 </div>
             </div>

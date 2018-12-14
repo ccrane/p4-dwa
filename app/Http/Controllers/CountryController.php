@@ -8,10 +8,13 @@ use App\Country;
 class CountryController extends Controller
 {
     public function index(Request $request) {
-        $countries = Country::orderBy('name')->get();
+        $perPageSize = $request->perPageSize;
+
+        $countries = Country::orderBy('name')->paginate($perPageSize);
 
         return view('admin.countries.index', [
-            'countries' => $countries
+            'countries' => $countries,
+            'perPageSize' => $perPageSize
         ]);
     }
 
