@@ -41,6 +41,7 @@ __Delete__
 ## Outside resources
 + [Bootstrap 4.1.3](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 + [jQuery 3.1.1 (*required for Bootstrap*)](https://jquery.com/download/)
++ [Font Awesome 5.6.1](https://fontawesome.com)
 
 ## Code style divergences
 *List any divergences from PSR-1/PSR-2 and course guidelines on code style*

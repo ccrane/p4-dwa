@@ -13,6 +13,10 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+          crossorigin="anonymous">
     <link href='{{ asset("css/uncorked.css") }}' rel='stylesheet'>
 
     {{-- CSS specific to a given page/child view can be included via a stack --}}
@@ -36,16 +40,16 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/admin">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item {{ Request::is("admin") ? 'active' : '' }}">
+                    <a class="nav-link" href="/admin">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is("admin/users*") ? 'active' : '' }}">
                     <a class="nav-link" href="/admin/users">Users</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is("admin/countries*") ? 'active' : '' }}">
                     <a class="nav-link" href="/admin/countries">Countries</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is("admin/wines*") ? 'active' : '' }}">
                     <a class="nav-link" href="/admin/wines">Wines</a>
                 </li>
             </ul>

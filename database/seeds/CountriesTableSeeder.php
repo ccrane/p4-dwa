@@ -229,7 +229,7 @@ class CountriesTableSeeder extends Seeder
             ['Sweden', 'SE'],
             ['Switzerland', 'CH'],
             ['Syrian Arab Republic (Syria)', 'SY'],
-            ['Taiwan"', 'TW'],
+            ['Taiwan', 'TW'],
             ['Tajikistan', 'TJ'],
             ['Tanzania', 'TZ'],
             ['Thailand', 'TH'],
