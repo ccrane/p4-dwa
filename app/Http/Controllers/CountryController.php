@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Region;
 use Illuminate\Http\Request;
 use App\Country;
 
@@ -153,5 +154,22 @@ class CountryController extends Controller
             'alert' => $alert,
             'success' => $success
         ]);
+    }
+
+    public function regions(Request $request, $id) {
+        $country = Country::with(['regions' => function($query){
+            return $query->where('parent_id', '=', null)->with('regions');
+        }])->find($id);
+
+        if ($country) {
+            return view('admin.countries.regions')->with([
+                'country' => $country
+            ]);
+        } else {
+            return redirect('/admin/countries')->with([
+                'alert' => 'Country with id [' . $id . '] could not be found.',
+                'success' => true
+            ]);
+        }
     }
 }

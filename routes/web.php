@@ -24,6 +24,24 @@ Route::get('/admin/countries/{id}/delete', 'CountryController@delete');
 
 Route::delete('/admin/countries/{id}', 'CountryController@destroy');
 
+Route::get('/admin/countries/{id}/regions', 'CountryController@regions');
+
+Route::get('/admin/countries/{cid}/regions/create', 'RegionController@create');
+
+Route::get('/admin/countries/{cid}/regions/{rid?}/create', 'RegionController@create');
+
+Route::post('/admin/countries/{cid}/regions', 'RegionController@store');
+
+Route::post('/admin/countries/{cid}/regions/{rid?}', 'RegionController@store');
+
+Route::get('/admin/countries/{cid}/regions/{rid}/delete', 'RegionController@delete');
+
+Route::delete('/admin/countries/{cid}/regions/{rid}', 'RegionController@destroy');
+
+Route::get('/admin/countries/{cid}/regions/{rid}/edit', 'RegionController@edit');
+
+Route::put('/admin/countries/{cid}/regions/{rid}', 'RegionController@update');
+
 # User authenticated routes
 Route::get('/user', function () {
     return view('user.index');

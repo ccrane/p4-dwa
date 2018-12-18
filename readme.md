@@ -42,6 +42,8 @@ __Delete__
 + [Bootstrap 4.1.3](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 + [jQuery 3.1.1 (*required for Bootstrap*)](https://jquery.com/download/)
 + [Font Awesome 5.6.1](https://fontawesome.com)
++ [Country Codes List](https://www.nationsonline.org/oneworld/country_code_list.htm)
++ [List of Wine Producing Regions](https://en.wikipedia.org/wiki/List_of_wine-producing_regions)
 
 ## Code style divergences
 *List any divergences from PSR-1/PSR-2 and course guidelines on code style*

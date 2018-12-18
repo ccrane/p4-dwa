@@ -4,7 +4,7 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center my-5">
-            <div class="col-5">
+            <div class="col-8">
                 <div class="card text-center">
                     <h5 class="card-header">Countries &amp; Regions</h5>
                     <div class="card-body">
@@ -28,6 +28,7 @@
                             </div>
                         </form>
                         <table class="table table-striped">
+                            <caption class='text-right'>{{$countries->total()}} countries found.</caption>
                             <thead>
                             <tr>
                                 <th scope="col" style='width: 20%;'>ID</th>
@@ -43,6 +44,7 @@
                                     <td>{{ $country->name }}</td>
                                     <td>{{ $country->iso_code }}</td>
                                     <td class='d-flex justify-content-center'>
+                                        <a href='/admin/countries/{{ $country->id }}/regions' title='Regions'><i class="fas fa-map-marked-alt fa-lg"></i></a>&nbsp;&nbsp;
                                         <a href='/admin/countries/{{ $country->id }}/edit' title='Edit Country'><i class="far fa-edit fa-lg"></i></a>&nbsp;&nbsp;
                                         <a href='/admin/countries/{{ $country->id }}/delete' title='Delete Country'><i class="far fa-trash-alt fa-lg"></i></a>
                                     </td>
@@ -50,10 +52,13 @@
                             @endforeach
                             </tbody>
                         </table>
+                        @if($countries->total() > $countries->perPage())
+                            <div class="d-flex align-items-center justify-content-center">
+                                {{ $countries->appends(['perPageSize' => $perPageSize, 'searchText' => $searchText])->links() }}
+                            </div>
+                        @endif
                     </div>
-                    <div class="card-footer d-flex align-middle justify-content-center">
-                        {{ $countries->appends(['perPageSize' => $perPageSize, 'searchText' => $searchText])->render() }}
-                    </div>
+
                 </div>
             </div>
         </div>
