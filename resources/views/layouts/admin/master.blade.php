@@ -52,6 +52,12 @@
                 <li class="nav-item {{ Request::is("admin/wineries*") ? 'active' : '' }}">
                     <a class="nav-link" href="/admin/wineries">Wineries</a>
                 </li>
+                <li class="nav-item" >
+                    <form method='POST' id='logout' action='/logout'>
+                        {{ csrf_field() }}
+                        <a class="nav-link" href='#' onclick='document.getElementById("logout").submit();'>Logout</a>
+                    </form>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <select class="form-control mr-sm-2">

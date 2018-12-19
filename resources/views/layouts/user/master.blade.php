@@ -45,6 +45,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user/favorites">Favorites</a>
                 </li>
+                <li class="nav-item" >
+                    <form method='POST' id='logout' action='/logout'>
+                        {{ csrf_field() }}
+                        <a class="nav-link" href='#' onclick='document.getElementById("logout").submit();'>Logout</a>
+                    </form>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search any wine!" aria-label="Search">
