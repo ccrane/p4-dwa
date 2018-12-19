@@ -8,7 +8,6 @@ class RegionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
      * @return void
      */
     public function run()
@@ -32,15 +31,15 @@ class RegionsTableSeeder extends Seeder
         foreach ($regions as $region) {
             $country = Country::where('iso_code', '=', $region[0])->first();
 
-            if($country) {
+            if ($country) {
                 $newRegion = new Region();
                 $newRegion->name = $region[1];
                 $newRegion->country_id = $country->id;
 
-                if($region[2] != null) {
+                if ($region[2] != null) {
                     $parent = Region::where('name', '=', $region[2])->first();
 
-                    if($parent) {
+                    if ($parent) {
                         $newRegion->parent_id = $parent->id;
                     }
                 }
@@ -48,6 +47,5 @@ class RegionsTableSeeder extends Seeder
                 $newRegion->save();
             }
         }
-
     }
 }

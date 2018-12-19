@@ -49,8 +49,8 @@
                 <li class="nav-item {{ Request::is("admin/countries*") ? 'active' : '' }}">
                     <a class="nav-link" href="/admin/countries">Countries</a>
                 </li>
-                <li class="nav-item {{ Request::is("admin/wines*") ? 'active' : '' }}">
-                    <a class="nav-link" href="/admin/wines">Wines</a>
+                <li class="nav-item {{ Request::is("admin/wineries*") ? 'active' : '' }}">
+                    <a class="nav-link" href="/admin/wineries">Wineries</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

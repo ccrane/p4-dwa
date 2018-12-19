@@ -44,6 +44,13 @@ __Delete__
 + [Font Awesome 5.6.1](https://fontawesome.com)
 + [Country Codes List](https://www.nationsonline.org/oneworld/country_code_list.htm)
 + [List of Wine Producing Regions](https://en.wikipedia.org/wiki/List_of_wine-producing_regions)
++ [Laravel Recursive Relationships
+](https://stackoverflow.com/questions/26652611/laravel-recursive-relationships)
++ [Grape Varieties &amp; Wine Styles](https://www.thewinesociety.com/wine-basics-grapes-styles)
++ [Stock Wine Bottle Image](http://media.gettyimages.com/photos/red-wine-bottle-isolated-on-white-background-picture-id847117018?s=170667a&w=1007)
++ [Morrison Vineyard](http://www.bonairwine.com/current.htm)
++ [Chateau Ste. Michelle Winery](https://www.ste-michelle.com/our-wines#collection=9&keyword=&page=1)
++ [Kiona Wine](https://www.kionawine.com)
 
 ## Code style divergences
 *List any divergences from PSR-1/PSR-2 and course guidelines on code style*

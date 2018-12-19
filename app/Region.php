@@ -15,15 +15,27 @@ class Region extends Model
         return $this->belongsTo('App\Country');
     }
 
-    public function region() {
+    public function parentRegion() {
         return $this->belongsTo(self::class, 'parent_id');
     }
 
-    public function subregions() {
+    public function region() {
+        return $this->parentRegion()->with('region');
+    }
+
+    public function childRegions() {
         return $this->hasMany(self::class, 'parent_id');
     }
 
     public function regions() {
-        return $this->subregions()->with('regions');
+        return $this->childRegions()->with('regions');
+    }
+
+    public function wineries() {
+        return $this->hasMany('App\Winery');
+    }
+
+    public function wines() {
+        return $this->hasMany('App\Wine');
     }
 }
