@@ -30,7 +30,7 @@ class WineryController extends Controller
 
     public function show(Request $request, $id)
     {
-        $winery = Winery::find($id);
+        $winery = Winery::with('wines')->find($id);
 
         if (!$winery) {
             return redirect('/admin/wineries')->with([

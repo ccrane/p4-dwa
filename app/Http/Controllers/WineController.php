@@ -213,4 +213,29 @@ class WineController extends Controller
             'success' => $success
         ]);
     }
+
+    public function show(Request $request, $id, $wid)
+    {
+        $winery = Winery::with(['country', 'region'])->find($id);
+
+        if (!$winery) {
+            return redirect('/admin/wineries')->with([
+                'alert' => 'Winery with id [' . $id . '] could not be found.',
+                'success' => false
+            ]);
+        } else {
+            $wine = Wine::with(['country', 'region', 'type', 'variety', 'reviews'])->find($wid);
+
+            if (!$wine) {
+                return redirect('/admin/wineries/' . $id)->with([
+                    'alert' => 'Wine with id [' . $id . '] could not be found.',
+                    'success' => false
+                ]);
+            }
+
+            return view('admin.wines.show')->with([
+                'wine' => $wine,
+            ]);
+        }
+    }
 }

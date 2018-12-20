@@ -3,34 +3,37 @@
 + Production URL: <http://p4.chriscrane-dwa.me>
 
 ## Database
-*The following is example info taken from Foobooks; delete and replace with your own info.*
 
 Primary tables:
-  + `books`
-  + `authors`
+  + `wineries`
+  + `wines`
   + `tags`
   + `users`
+  + `countries`
+  + `regions`
+  + `reviews`
+  + `grape_varieties`
+  + `wine_types`
   
 Pivot table(s):
-  + `book_tag`
+  + `review_tag`
 
 
 ## CRUD
-*Describe what action I need take in order to see an example of all 4 CRUD operations in your app. I've filled this out with examples from the Foobooks app - delete this and replace with your own info. If one operation is performed multiple times (e.g. Read), you only need to provide 1 example.*
 
 __Create__
-  + Visit <http://p4.foobooks.me/books/create>
+  + Visit <http://p4.chriscrane-dwa.me/admin/countries/create>
   + Fill out form
-  + Click *Add new book*
+  + Click *Save*
   + Observe confirmation message
   
 __Read__
-  + Visit <http://p4.foobooks.me/books> see a listing of all books
+  + Visit <http://p4.chriscrane-dwa.me/admin/wineries> see a listing of all books
   
 __Update__
-  + Visit <http://p4.foobooks.me/books>; choose the Edit button next to one of the books
+  + Visit <http://p4.chriscrane-dwa.me/admin/wineries/11/edit>; choose the Edit button next to one of the books
   + Make some edit to form
-  + Click *Save changes*
+  + Click *Save*
   + Observe confirmation message
   
 __Delete__
@@ -54,7 +57,11 @@ __Delete__
 + [Set-up role based access control in Laravel](https://www.kerneldev.com/2018/02/12/set-up-role-based-access-control-in-laravel/)
 
 ## Code style divergences
-*List any divergences from PSR-1/PSR-2 and course guidelines on code style*
+*None*
 
 ## Notes for instructor
-*Any notes for me to refer to while grading; if none, omit this section*
+
+I enjoyed this project, but I may have been to ambitious.
+
+Thanks
+Susan

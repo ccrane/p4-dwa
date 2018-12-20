@@ -26,4 +26,12 @@ class Wine extends Model
         return $this->belongsTo('App\GrapeVariety');
     }
 
+    public function reviews() {
+        return $this->hasMany('App\Review');
+    }
+
+    public function latestReview() {
+        return $this->hasOne('App\Review')->latest();
+    }
+
 }

@@ -23,7 +23,7 @@
 <header>
     {{-- Global header content, ie nav bar --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Uncorked! Welcome John</a>
+        <a class="navbar-brand" href="#">Uncorked! Welcome {{ explode(' ', $user->name, 0)[0] }}</a>
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -36,14 +36,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item {{ Request::is('/user/home') ? 'active' : '' }}">
                     <a class="nav-link" href="/user">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/user/reviews">Reviews</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/user/favorites">Favorites</a>
+                <li class="nav-item {{ Request::is('/user/reviews/create') ? 'active' : '' }}">
+                    <a class="nav-link" href="/user/reviews/create">Add Review</a>
                 </li>
                 <li class="nav-item" >
                     <form method='POST' id='logout' action='/logout'>
@@ -52,10 +49,6 @@
                     </form>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search any wine!" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 </header>

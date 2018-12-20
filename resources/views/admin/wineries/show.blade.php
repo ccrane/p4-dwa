@@ -21,7 +21,7 @@
                         </div>
                         @if($winery->wines->count() > 0)
                             @foreach($winery->wines as $wine)
-                                @include('modules.wine-details', [
+                                @include('modules.wine-details-with-review', [
                                     'wine' =>$wine,
                                     'isadmin' => true
                                 ])

@@ -23,6 +23,6 @@ class Winery extends Model
     }
 
     public function wines() {
-        return $this->hasMany('App\Wine');
+        return $this->hasMany('App\Wine')->with('latestReview');
     }
 }

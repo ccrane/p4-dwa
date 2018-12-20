@@ -1,4 +1,4 @@
-@extends('layouts.user.master')
+@extends('layouts.admin.master')
 
 @section('content')
 
@@ -7,9 +7,9 @@
             <div class="col-9">
                 <div class="card text-center">
                     <div class="card-header">
-                        <h4>Your Reviewed Wines</h4>
+                        <h4>{{ $user->name }}</h4>
                         <h6 class="card-subtitle text-muted">
-                            {{ $user->name }} &middot; {{ $user->email }}
+                            {{ $user->email }}
                         </h6>
                     </div>
                     <div class="card-body">
@@ -31,3 +31,4 @@
     </div>
 
 @endsection
+

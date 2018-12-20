@@ -1,17 +1,13 @@
 <?php
 ##### NON-AUTHENTICATED ROUTES START ######
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'IndexController@guest_index');
 
 ##### NON-AUTHENTICATED ROUTES END ######
 
 
 ##### ADMIN AUTHENTICATED ROUTES START ######
-Route::get('/admin', function () {
-    return view('admin.index');
-})->middleware('auth','admin');
+Route::get('/admin', 'IndexController@admin_index')->middleware('auth','admin');
 
 # Country routes
 Route::get('/admin/countries', 'CountryController@index')->middleware('auth','admin');
@@ -79,14 +75,36 @@ Route::get('/admin/wineries/{id}/wines/{wid}/delete', 'WineController@delete')->
 
 Route::delete('/admin/wineries/{id}/wines/{wid}', 'WineController@destroy')->middleware('auth','admin');
 
+Route::get('/admin/wineries/{id}/wines/{wid}', 'WineController@show')->middleware('auth','admin');
+
+
+# User Routes
+Route::get('/admin/users', 'UserController@index')->middleware('auth','admin');
+
+Route::get('/admin/users/create', 'UserController@create')->middleware('auth','admin');
+
+Route::post('/admin/users', 'UserController@store')->middleware('auth','admin');
+
+Route::get('/admin/users/{id}/delete', 'UserController@delete')->middleware('auth','admin');
+
+Route::delete('/admin/users/{id}', 'UserController@destroy')->middleware('auth','admin');
+
+Route::get('/admin/users/{id}/edit', 'UserController@edit')->middleware('auth','admin');
+
+Route::put('/admin/users/{id}', 'UserController@update')->middleware('auth','admin');
+
+Route::get('/admin/users/{id}', 'UserController@show')->middleware('auth','admin');
+
 ##### ADMIN AUTHENTICATED ROUTES END ######
 
 
 ##### USER AUTHENTICATED ROUTES START ######
 
-Route::get('/user', function () {
-    return view('user.index');
-})->middleware('auth','standard');
+Route::get('/user', 'UserIndexController@index')->middleware('auth','standard');
+
+Route::get('/user/reviews/create', 'UserIndexController@create')->middleware('auth','standard');
+
+Route::post('/user/reviews/create', 'UserIndexController@store')->middleware('auth','standard');
 
 ##### USER AUTHENTICATED ROUTES END ######
 

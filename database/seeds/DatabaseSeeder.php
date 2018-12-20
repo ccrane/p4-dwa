@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WineTypesTableSeeder::class);
         $this->call(GrapeVarietiesTableSeeder::class);
         $this->call(WinesTableSeeder::class);
+        $this->call(ReviewsTableSeeder::class);
     }
 }

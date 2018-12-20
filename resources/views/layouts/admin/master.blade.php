@@ -60,11 +60,8 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <select class="form-control mr-sm-2">
-                    <option value='user'>User</option>
-                    <option value='wine' selected>Wine</option>
-                </select>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search any wine!" aria-label="Search">
+                <label for='searchText'>Wine:&nbsp;&nbsp;</label>
+                <input class="form-control mr-sm-2" type="search" id='searchText' name='searchText' placeholder="Search any wine!" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
